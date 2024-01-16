@@ -1,6 +1,4 @@
-const saludo: string = "Hola humano";
-
-const saludar = (saludo: string) => {
+export const saludar = (saludo: string) => {
     return new Promise(resolve => {
         setTimeout(() => {
             resolve(saludo)

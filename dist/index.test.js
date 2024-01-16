@@ -26,10 +26,11 @@ describe("deberia devolver un saludo", () => {
                 }, 500);
             });
         };
-        const start = Date.now();
+        const startTime = Date.now();
         const resultado = yield saludar(saludo);
-        const tiempoTranscurrido = Date.now() - start;
+        const tiempoTranscurrido = Date.now() - startTime;
         expect(resultado).toBe(saludo);
         expect(tiempoTranscurrido).toBeGreaterThan(499);
     }));
 });
+//# sourceMappingURL=index.test.js.map

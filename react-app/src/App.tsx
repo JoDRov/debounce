@@ -1,20 +1,20 @@
-import { useState } from 'react'
+//import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-const saludo: string = "Hola humano";
+  /*const saludo: string = "Hola humano";
 
-const saludar = (saludo: string) => {
-    return new Promise(resolve => {
-        setTimeout(() => {
+  const saludar = (saludo: string) => {
+      return new Promise(resolve => {
+          setTimeout(() => {
             resolve(saludo)
-        }, 500)
-    })
-}
+          }, 500)
+      })
+  }*/
 
-const resultado = saludar(saludo);
+  //const resultado = saludar(saludo);
 
   return (
     <>
@@ -28,7 +28,7 @@ const resultado = saludar(saludo);
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        
+        <p>Hola humano</p>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
