@@ -14,9 +14,9 @@ program
 
 const options = program.opts();
 
-function SaludarOrdenador(){
+async function SaludarOrdenador(){
     const saludo: string = "Ordenador: Hola humano";
-    const resultado = saludar(saludo)
+    const resultado = await saludar(saludo)
     console.log(resultado)
     return resultado;
 }
