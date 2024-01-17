@@ -1,13 +1,3 @@
-"use strict";
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 describe("deberia devolver un saludo", () => {
     test("devuelve un saludo", () => {
         const saludo = "Hola humano";
@@ -17,7 +7,7 @@ describe("deberia devolver un saludo", () => {
         }
         expect(saludar()).toBe(saludo);
     });
-    test("deberia esperar 500 ms para enviar el saludo", () => __awaiter(void 0, void 0, void 0, function* () {
+    test("deberia esperar 500 ms para enviar el saludo", async () => {
         const saludo = "Hola humano";
         const saludar = (saludo) => {
             return new Promise(resolve => {
@@ -27,10 +17,11 @@ describe("deberia devolver un saludo", () => {
             });
         };
         const startTime = Date.now();
-        const resultado = yield saludar(saludo);
+        const resultado = await saludar(saludo);
         const tiempoTranscurrido = Date.now() - startTime;
         expect(resultado).toBe(saludo);
         expect(tiempoTranscurrido).toBeGreaterThan(499);
-    }));
+    });
 });
+export {};
 //# sourceMappingURL=index.test.js.map

@@ -1,28 +1,39 @@
+#!/usr/bin/env node
+
 import {Command} from 'commander'
-import {saludar} from './index'
+import {saludar} from './index.js'
 import figlet from 'figlet'
+import fs from 'fs'
+
+// Declare the program
 
 const program = new Command()
+
+// Add actions onto de CLI
 
 console.log(figlet.textSync("Saluda a tu ordenador!"));
 
 program
-    .version("1.0.0")
-    .description("El ordenador te saluda")
-    .option ("-s, --saludar <saludo>", "saluda al ordenador y te saluda de vuelta")
-    .parse (process.argv)
+    .command("Saludar string")
+    .action((userString: string) => {
+        console.log(`Usuario: ${userString}`)
+        SaludarOrdenador()
+    })
+    .description("Saluda al ordenador y te saluda de vuelta")
 
-const options = program.opts();
+
 
 async function SaludarOrdenador(){
     const saludo: string = "Ordenador: Hola humano";
     const resultado = await saludar(saludo)
     console.log(resultado)
-    return resultado;
 }
+
+const options = program.opts();
 
 if (options.s){
     console.log("Usuario: " + options.s)
     SaludarOrdenador()
 }
 
+program.parse(process.argv)

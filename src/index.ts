@@ -1,7 +1,7 @@
-export const saludar = (saludo: string) => {
+export const saludar = (saludo: string): Promise<string> => {
     return new Promise(resolve => {
         setTimeout(() => {
-            resolve(saludo)
-        }, 500)
+            return resolve(saludo)
+        }, 1500)
     })
 }
