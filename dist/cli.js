@@ -7,7 +7,8 @@ const program = new Command();
 // Add actions onto de CLI
 console.log(figlet.textSync("Saluda a tu ordenador!"));
 program
-    .command("Saludar string")
+    .command("s string")
+    .option("-s, --s <string>", "Saluda a tu ordenador")
     .action((userString) => {
     console.log(`Usuario: ${userString}`);
     SaludarOrdenador();

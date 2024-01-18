@@ -3,7 +3,6 @@
 import {Command} from 'commander'
 import {saludar} from './index.js'
 import figlet from 'figlet'
-import fs from 'fs'
 
 // Declare the program
 
@@ -14,14 +13,13 @@ const program = new Command()
 console.log(figlet.textSync("Saluda a tu ordenador!"));
 
 program
-    .command("Saludar string")
+    .command("s string")
+    .option("-s, --s <string>", "Saluda a tu ordenador")
     .action((userString: string) => {
         console.log(`Usuario: ${userString}`)
         SaludarOrdenador()
     })
     .description("Saluda al ordenador y te saluda de vuelta")
-
-
 
 async function SaludarOrdenador(){
     const saludo: string = "Ordenador: Hola humano";
