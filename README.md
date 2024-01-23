@@ -4,4 +4,4 @@
 
 2. node dist/cli s <string>
 
-# el string se envia al ordenador y el ordenador te saluda de vuelta
+# el string se envia al ordenador y el ordenador te saluda de vuelta en un momento
