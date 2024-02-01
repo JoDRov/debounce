@@ -1,3 +1,8 @@
+const func = jest.fn()
+jest.useFakeTimers()
+
+// utilizar los fake timers para testear lo que pasa en el tiempo
+
 describe("deberia devolver un saludo", () => {
     test("devuelve un saludo", () => {
         const saludo: string = "Hola humano";

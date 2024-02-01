@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import {Command} from 'commander'
+/*import {Command} from 'commander'
 import {saludar} from './index.js'
 import figlet from 'figlet'
 
@@ -35,3 +35,4 @@ if (options.s){
 }
 
 program.parse(process.argv)
+*/
