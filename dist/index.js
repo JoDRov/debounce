@@ -1,32 +1,14 @@
-/*const saludar = (saludo: string): Promise<string> => {
-    return new Promise(resolve => {
-        setTimeout(() => {
-            console.log(saludo)
-            return resolve(saludo)
-        }, 5000)
-    })
-}*/
-let waitToEnd = false;
-function saludar(texto) {
-    const ms = 500;
-    if (!waitToEnd) {
-        fn(ms, texto);
-    }
-    else {
-        console.log("Wait man!");
-    }
-}
-const fn = (ms, texto) => {
-    waitToEnd = true;
-    setTimeout(() => {
-        console.log(texto);
-        waitToEnd = false;
-    }, ms);
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.debounce = void 0;
+const debounce = (mainFunction, ms) => {
+    let timer;
+    return function (...args) {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+            mainFunction(...args);
+        }, ms);
+    };
 };
-saludar("Hola");
-saludar("adios");
-saludar("adios");
-saludar("adios");
-//module.exports = { saludar, fn }
-export { saludar, fn };
+exports.debounce = debounce;
 //# sourceMappingURL=index.js.map
