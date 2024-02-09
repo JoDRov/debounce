@@ -4,7 +4,7 @@ import { debounce } from "../index"
 jest.useFakeTimers()
 // utilizar los fake timers para testear lo que pasa en el tiempo
 
-describe("deberia devolver un saludo", () => {
+describe("should call a function with debounce", () => {
     it("should call the function 2 times, reseting with each call", () =>{
         const func = jest.fn()
         let debouncedFunc = debounce(func, 500)
